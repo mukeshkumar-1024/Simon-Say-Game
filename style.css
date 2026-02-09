@@ -1,0 +1,199 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+}
+
+/* ===== Titles ===== */
+
+h1 {
+  font-size: 38px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  position: relative;
+  padding-top: 12px;
+}
+
+/* Moving top border */
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #00ffff,
+    #ff00ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+
+  background-size: 200% 100%;
+  border-radius: 10px;
+
+  animation: h2run 3s linear infinite;
+}
+
+@keyframes h2run {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* ===== Button Layout ===== */
+
+.line-one,
+.line-two {
+  display: flex;
+}
+
+.btn {
+  height: 160px;
+  width: 160px;
+  margin: 12px;
+  border-radius: 28px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+
+  transition: 0.2s;
+  box-shadow:
+    inset 0 0 15px rgba(255, 255, 255, 0.2),
+    0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Luxury Colors ===== */
+
+.red {
+  background: linear-gradient(145deg, #ff4d4d, #b30000);
+}
+
+.yellow {
+  background: linear-gradient(145deg, #ffd633, #b38600);
+}
+
+.green {
+  background: linear-gradient(145deg, #33ff99, #00994d);
+}
+
+.purple {
+  background: linear-gradient(145deg, #c084fc, #6d28d9);
+}
+
+/* ===== Hover ===== */
+
+.btn:hover {
+  transform: scale(1.07);
+}
+
+/* Simon flash (game sequence) */
+.flash {
+  filter: brightness(1.2);
+  transform: scale(1.08);
+  box-shadow:
+    0 0 25px #00f7ff,
+    0 0 50px #00f7ff,
+    inset 0 0 15px white;
+}
+
+/* User click flash */
+.userflash {
+  filter: brightness(1);
+  transform: scale(0.95);
+  box-shadow:
+    0 0 25px #ff9f00,
+    0 0 45px #ff9f00,
+    inset 0 0 15px white;
+}
+
+/* ===== High Score Glass Card ===== */
+
+.highScore {
+  position: relative;
+  margin-top: 15px;
+  padding: 12px 28px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  top: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.25);
+
+  overflow: hidden;
+}
+
+/* Animated border */
+.highScore {
+  margin-top: 15px;
+  padding: 12px 28px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+
+  border: 3px solid transparent;
+
+  /* Gradient border */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    linear-gradient(90deg, red, yellow, lime, cyan, blue, magenta, red);
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  background-size:
+    100% 100%,
+    300% 100%;
+
+  animation: borderMove 4s linear infinite;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position:
+      0% 0%,
+      0% 0%;
+  }
+  100% {
+    background-position:
+      0% 0%,
+      300% 0%;
+  }
+}
