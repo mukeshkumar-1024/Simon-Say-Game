@@ -65,10 +65,6 @@ function checkAns(idx){
             higestScore = level;
             highScore1.innerHTML = `Your Higest Score is ${higestScore}`;
         }
-        // else{
-        //     higestScore = level;
-        //     highScore1.innerHTML = `Your Higest Score is ${higestScore}`;
-        // }
 
         reset();
     }
